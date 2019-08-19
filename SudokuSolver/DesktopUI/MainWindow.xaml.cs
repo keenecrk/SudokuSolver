@@ -48,13 +48,19 @@ namespace DesktopUI
                 sp.Orientation = Orientation.Horizontal;
                 for (int j = 0; j < 9; j++)
                 {
-                    TextBox tb = _sudokuGrid[i, j];
-                    FormatBorders(i, j);
-                    tb.PreviewTextInput += Tb_PreviewTextInput;
-                    sp.Children.Add(tb);
+                    ConfigureTextBox(i, j, sp);
                 }
                 root.Children.Add(sp);
             }
+        }
+
+        private void ConfigureTextBox(int row, int column, StackPanel sp)
+        {
+            TextBox tb = _sudokuGrid[row, column];
+            FormatBorders(row, column);
+            FormatBackground(row, column);
+            tb.PreviewTextInput += Tb_PreviewTextInput;
+            sp.Children.Add(tb);
         }
 
         private void Tb_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -63,34 +69,55 @@ namespace DesktopUI
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void FormatBorders(int i, int j)
+        private void FormatBorders(int row, int column)
         {
             double borderThickness = 2.5;
-            TextBox tb = _sudokuGrid[i, j];
+            TextBox tb = _sudokuGrid[row, column];
             tb.BorderBrush = Brushes.Black;
             Thickness thickness = new Thickness(0.5);
-            if (IsTop(i))
+            if (IsTop(row))
             {
                 thickness.Top = borderThickness;                
             }
-            if (IsBottom(i))
+            if (IsBottom(row))
             {
                 thickness.Bottom = borderThickness;
             }
-            if (IsLeft(j))
+            if (IsLeft(column))
             {
                 thickness.Left = borderThickness;
             }
-            if (IsRight(j))
+            if (IsRight(column))
             {
                 thickness.Right = borderThickness;
             }
             tb.BorderThickness = thickness;
         }
 
-        private bool IsTop(int i) { return i == 0; }
-        private bool IsBottom(int i) { return i % 3 == 2; }
-        private bool IsLeft(int j) { return j == 0; }
-        private bool IsRight(int j) { return j % 3 == 2; }
+        private bool IsTop(int row) { return row == 0; }
+        private bool IsBottom(int row) { return row % 3 == 2; }
+        private bool IsLeft(int column) { return column == 0; }
+        private bool IsRight(int column) { return column % 3 == 2; }
+
+        private void FormatBackground(int row, int column)
+        {
+            var color = Brushes.AliceBlue;
+            var tb = _sudokuGrid[row, column];
+
+            if (row < 3 || row > 5)
+            {
+                if (column < 3 || column > 5)
+                {
+                    tb.Background = color;
+                }
+            }
+            else 
+            {
+                if (column >= 3 && column <= 5)
+                {
+                    tb.Background = color;
+                }
+            }          
+        }
     }
 }
