@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopUI"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Background="LightYellow"
         Title="MainWindow" Height="auto" Width="800">
     <Window.Resources>
         <Style TargetType="TextBox">
@@ -32,7 +32,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1" FontSize="48"
-                   Text="Sudoku Solver" />
+                   Text="Sudoku Solver" HorizontalAlignment="Center"/>
         <StackPanel
             Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="30"
             Loaded="StackPanel_Loaded"
@@ -40,7 +40,7 @@
             />
         <Button x:Name="SolveButton" Grid.Row="3" Grid.Column="1"
                 Content="Solve" FontSize="24" HorizontalAlignment="Right"
-                FontWeight="Bold" Margin="0 0 50 0" Padding="10" />
+                FontWeight="Bold" Margin="0 0 50 0" Padding="10" Click="SolveButton_Click" />
 
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -101,7 +102,7 @@ namespace DesktopUI
 
         private void FormatBackground(int row, int column)
         {
-            var color = Brushes.AliceBlue;
+            var color = Brushes.Bisque;
             var tb = _sudokuGrid[row, column];
 
             if (row < 3 || row > 5)
@@ -118,6 +119,40 @@ namespace DesktopUI
                     tb.Background = color;
                 }
             }          
+        }
+
+        private void SolveButton_Click(object sender, RoutedEventArgs e)
+        {
+            string[,] data = TextBoxesToArray();
+            Solver solver = new Solver();
+            string[,] result = solver.Solve(data);
+            ArrayToTextBoxes(result);
+        }
+
+        private void ArrayToTextBoxes(string[,] result)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    _sudokuGrid[i, j].Text = result[i, j];
+                }
+            }
+        }
+
+        private string[,] TextBoxesToArray()
+        {
+            string[,] data = new string[9, 9];
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    string s = _sudokuGrid[i, j].Text;
+                    data[i, j] = (string.IsNullOrWhiteSpace(s)) ? "." : s;
+                }
+            }
+
+            return data;
         }
     }
 }
