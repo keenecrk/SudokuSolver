@@ -8,20 +8,16 @@ namespace Backend
 {
     public class Solver
     {
-        public string[,] Solve(string[,] sudokuGrid)
+        public string[,] Solve(string[,] partialSudokuGrid)
         {
-            return new string[9, 9]
-            {
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" },
-                { "9", "8", "7", "6", "5", "4", "3", "2", "1" }
-            };
+            return SolveSudokuPuzzle(partialSudokuGrid);
+        }
+
+        private string[,] SolveSudokuPuzzle(string[,] partialSudokuGrid)
+        {
+            SudokuGrid sudokuGrid = new SudokuGrid(partialSudokuGrid);
+
+            return null;
         }
     }
 }
