@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopUI", "DesktopUI\Desk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.csproj", "{A3DE3342-F6AD-47E6-AA1B-6535FB8CCB57}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Tests", "Backend.Tests\Backend.Tests.csproj", "{B0041F2C-1214-4F83-8DC6-B5772C2EC6C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A3DE3342-F6AD-47E6-AA1B-6535FB8CCB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3DE3342-F6AD-47E6-AA1B-6535FB8CCB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3DE3342-F6AD-47E6-AA1B-6535FB8CCB57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0041F2C-1214-4F83-8DC6-B5772C2EC6C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0041F2C-1214-4F83-8DC6-B5772C2EC6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0041F2C-1214-4F83-8DC6-B5772C2EC6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0041F2C-1214-4F83-8DC6-B5772C2EC6C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

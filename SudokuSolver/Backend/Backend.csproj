@@ -45,6 +45,7 @@
     <Compile Include="Solver.cs" />
     <Compile Include="SudokuCell.cs" />
     <Compile Include="SudokuGrid.cs" />
+    <Compile Include="SudokuGridInitializer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,36 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Backend
 {
-    internal class SudokuGrid
+    public class SudokuGrid
     {
-        List<SudokuCell> _grid = new List<SudokuCell>();
+        public List<SudokuCell> Cells { get; internal set; }
+        public List<List<SudokuCell>> Units { get; internal set; }
 
-        public SudokuGrid(string[,] partialSudokuGrid)
-        {
-            InitCells();
-            MapPeers();
-        }
+        
 
-        private void InitCells()
-        {
-            for (int row = 0; row < 9; row++)
-            {
-                for (int column = 0; column < 9; column++)
-                {
-                    _grid.Add(new SudokuCell
-                    {
-                        Row = row,
-                        Column = column
-                    }); ;
-                }
-            }
-        }
 
-        private void MapPeers()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -8,14 +8,9 @@ namespace Backend
 {
     public class Solver
     {
-        public string[,] Solve(string[,] partialSudokuGrid)
+        public string[,] Solve(string[,] partialValues)
         {
-            return SolveSudokuPuzzle(partialSudokuGrid);
-        }
-
-        private string[,] SolveSudokuPuzzle(string[,] partialSudokuGrid)
-        {
-            SudokuGrid sudokuGrid = new SudokuGrid(partialSudokuGrid);
+            SudokuGrid sudokuGrid = SudokuGridInitializer.InitGrid(partialValues);
 
             return null;
         }
